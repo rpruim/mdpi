@@ -279,7 +279,8 @@ Entry 2		& Data			& Data\\
 All appendix sections must be cited in the main text. In the appendices, Figures, Tables, etc. should be labeled, starting with ``A''---e.g., Figure A1, Figure A2, etc.
 
 \begin{adjustwidth}{-\extralength}{0cm}
-<!-- Un-comment to print a list of endnotes -->
+
+
 \printendnotes[custom] 
 
 \reftitle{References}
