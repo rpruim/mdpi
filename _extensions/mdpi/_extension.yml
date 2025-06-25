@@ -1,0 +1,33 @@
+title: MDPI
+author: Randall Pruim
+version: 1.0.0
+quarto-required: ">=1.6.0"
+contributes:
+  formats:
+    common:
+      toc: true
+      filters:
+        - mdpi.lua
+    pdf:
+      documentclass: mdpi
+      classoption: [preprints,article,submit,pdflaex,moreauthors]
+      include-in-header: header.tex
+      format-resources:
+        - resources/journalnames.tex
+        - resources/logo-mdpi-eps-converted-to.pdf
+        - resources/logo-mdpi.eps
+        - resources/logo-orcid.pdf
+        - resources/logo-updates.eps
+        - resources/mdpi.bst
+        - resources/mdpi.cls
+        - resources/mdpi_apacite.bst
+        - resources/mdpi_apacite.sty
+        - resources/mdpi_chicago.bst
+      template: templates/mdpi-template.tex
+      template-partials:
+        - partials/before-title.tex
+        - partials/title.tex
+        - partials/doc-class.tex
+        - partials/_print-author.tex
+    html:
+      css: styles.css
