@@ -29,6 +29,5 @@ contributes:
         - partials/before-title.tex
         - partials/title.tex
         - partials/doc-class.tex
-        - partials/_print-author.tex
     html:
       css: styles.css
