@@ -12,6 +12,7 @@ contributes:
       documentclass: mdpi
       include-in-header: header.tex
       format-resources:
+        - resources/author-info.tex
         - resources/journalnames.tex
         - resources/logo-mdpi-eps-converted-to.pdf
         - resources/logo-mdpi.eps
