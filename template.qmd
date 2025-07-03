@@ -2,28 +2,41 @@
 title: "Toward a Unified Theory of High-Energy Metaphysics: Silly String Theory"
 short-title: "Unified Silly String Theory"
 date: 2008-02-29
-author-block: author-info.tex
 author:
   - name: Josiah Karberry
     short-name: Karberry, J.
+    initials: J.K.
     id: jc
     orcid: 0000-0002-1825-0097
     email: josiah@psychoceramics.org
     affiliation: 
-      - name: Brown University
+      - id: brown
+        name: Brown University
         city: Providence
         state: RI
         url: www.brown.edu
   - name: Second Author 
+    initials: S.A.
+    corresponding: true
     short-name: Author, S.
     id: sa
     orcid: 0000-0002-1825-5555
     email: second.fiddle@gmail.com
     affiliation: 
-      - name: Blue University
+      - id: blue
+        name: Blue University
         city: Chance
         state: RI
         url: www.blue.edu
+  - name: Third Author 
+    initials: T.A.
+    short-name: Author, T.
+    id: sa
+    orcid: 0000-0002-1825-5555
+    email: third.leg@gmail.com
+    affiliation: 
+      - ref: brown 
+      - ref: blue
 abstract: > 
   The characteristic theme of the works of Stone is 
   the bridge between culture and society. ...
