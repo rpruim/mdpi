@@ -36,11 +36,10 @@ fig-width: 5
 fig-height: 3
 format: 
   mdpi-pdf:
-    keep-tex: true
-    documentclass: mdpi
     classoption: [energies,article,submit,pdflatex,moreauthors]
     pdf-engine: pdflatex
     toc: false
+    keep-tex: true
 ---
 
 # R Code
