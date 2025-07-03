@@ -67,8 +67,11 @@ $endfor$
 % Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, float, amsmath, amssymb, lineno, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, colortbl, soul, multirow, microtype, tikz, totcount, changepage, attrib, upgreek, array, tabularx, pbox, ragged2e, tocloft, marginnote, marginfix, enotez, amsthm, natbib, hyperref, cleveref, scrextend, url, geometry, newfloat, caption, draftwatermark, seqsplit
 % cleveref: load \crefname definitions after \begin{document}
  
-% \usepackage{orcidlink}
 \let\listoflistings\undefined
+
+$after-header-includes.tex()$
+
+$graphics.tex()$
 
 %=================================================================
 % Full title of the paper (Capitalized)
@@ -77,41 +80,41 @@ $endfor$
 % MDPI internal command: Title for citation in the left column
 \TitleCitation{$if(short-title)$$short-title$$else$$title$$endif$}
 
-
-% Authors, for the paper (add full first names)
-
-%\Author{$for(author)$$author$$sep$, $endfor$}
-
-\Author{$for(author)$$author$$sep$, $endfor$}
-
-
-\address{%
-$$^{1}$$ \quad Affiliation 1; e-mail@e-mail.com\\
-$$^{2}$$ \quad Affiliation 2; e-mail@e-mail.com}
-
-%\longauthorlist{yes}
-
-% MDPI internal command: Authors, for metadata in PDF
-\AuthorNames{$for(author)$$author$$sep$, $endfor$}
-
-% MDPI internal command: Authors, for citation in the left column
-\AuthorCitation{$for(by-author)$$it.short-name$$sep$; $endfor$}
-% If this is a Chicago style journal: Lastname, Firstname, Firstname Lastname, and Firstname Lastname.
-
-% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
-\address{%
-$for(by-author)$ \quad $if(by-author.affiliations)$$for(by-author.affiliations)$$it.name$$sep$, $endfor$; $endif$$by-author.email$$sep$\\ 
-$endfor$
-}
-
+$author-block.tex()$
 
 \abstract{$abstract$}
 
 % Keywords
 \keyword{$for(keywords)$$keywords$$sep$, $endfor$}
 
-\begin{document}
 
+$if(beamerarticle)$
+\usepackage{beamerarticle} % needs to be loaded first
+$endif$
+\usepackage{xcolor}
+$if(geometry)$
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$endif$
+\usepackage{amsmath,amssymb}
+$--
+$-- section numbering
+$--
+$if(numbersections)$
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+$endif$
+$-- $fonts.latex()$
+$-- $font-settings.latex()$
+$-- $common.latex()$
+$-- $after-header-includes.latex()$
+$-- $hypersetup.latex()$
+
+$before-title.tex()$
+
+$title.tex()$
+
+\begin{document}
 $before-body.tex()$
 
 $for(include-before)$
@@ -145,3 +148,4 @@ $endfor$
 $after-body.tex()$
 
 \end{document}
+

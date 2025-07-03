@@ -10,7 +10,6 @@ contributes:
         - mdpi.lua
     pdf:
       documentclass: mdpi
-      classoption: [preprints,article,submit,pdflaex,moreauthors]
       include-in-header: header.tex
       format-resources:
         - resources/journalnames.tex
@@ -25,6 +24,8 @@ contributes:
         - resources/mdpi_chicago.bst
       template: templates/mdpi-template.tex
       template-partials:
+        - partials/after-header-includes.tex
+        - partials/author-block.tex
         - partials/before-title.tex
         - partials/title.tex
         - partials/doc-class.tex
